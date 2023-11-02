@@ -3,19 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lilmende <lilmende@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/19 17:59:34 by lilmende          #+#    #+#             */
-/*   Updated: 2023/10/31 15:43:01 by lilmende         ###   ########.fr       */
+/*   Updated: 2023/11/02 16:18:37 by lilmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
+#include "libft.h"
 
 void	ft_putnbr_recursive(int n, int fd)
 {

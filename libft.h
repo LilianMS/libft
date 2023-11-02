@@ -6,7 +6,7 @@
 /*   By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:34:19 by lilmende          #+#    #+#             */
-/*   Updated: 2023/11/02 14:08:25 by lilmende         ###   ########.fr       */
+/*   Updated: 2023/11/02 14:15:58 by lilmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ char	*ft_strdup(const char *s);
 void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
+char	*ft_strchr(const char *s, int c);
+char	*ft_strrchr(const char *s, int c);
 
 #endif
