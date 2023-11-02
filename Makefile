@@ -6,7 +6,7 @@
 #    By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 15:34:39 by lilmende          #+#    #+#              #
-#    Updated: 2023/11/02 18:18:53 by lilmende         ###   ########.fr        #
+#    Updated: 2023/11/02 18:55:13 by lilmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,6 +22,7 @@ FILES = ft_memset \
 		ft_memcpy \
 		ft_memmove \
 		ft_memchar \
+		ft_memcmp \
 		ft_strlen \
 		ft_strlcpy \
 		ft_strlcat \
@@ -41,6 +42,7 @@ FILES = ft_memset \
 		ft_strchr \
 		ft_strrchr \
 		ft_strncmp \
+		ft_strnstr \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
