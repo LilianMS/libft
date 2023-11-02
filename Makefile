@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lilmende <lilmende@student.42.fr>          +#+  +:+       +#+         #
+#    By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 15:34:39 by lilmende          #+#    #+#              #
-#    Updated: 2023/10/31 16:22:07 by lilmende         ###   ########.fr        #
+#    Updated: 2023/11/02 13:40:08 by lilmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,9 @@ FILES = ft_memset \
 		ft_memmove \
 		ft_strlen \
 		ft_strlcpy \
+		ft_strlcat \
+		ft_strdup \
+		ft_calloc \
 		ft_isalpha \
 		ft_isdigit \
 		ft_isalnum \
