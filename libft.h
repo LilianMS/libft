@@ -6,7 +6,7 @@
 /*   By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:34:19 by lilmende          #+#    #+#             */
-/*   Updated: 2023/11/03 03:28:05 by lilmende         ###   ########.fr       */
+/*   Updated: 2023/11/04 13:30:35 by lilmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include <unistd.h>
 # include <stdlib.h>
+
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
