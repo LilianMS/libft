@@ -6,7 +6,7 @@
 /*   By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/02 14:18:17 by lilmende          #+#    #+#             */
-/*   Updated: 2023/11/06 13:47:11 by lilmende         ###   ########.fr       */
+/*   Updated: 2023/11/06 18:40:28 by lilmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,14 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last;
+	int	i;
 
-	last = 0;
-	while (*s != '\0')
+	i = ft_strlen(s);
+	while (i >= 0)
 	{
-		if (*s == (unsigned char)c)
-			last = s;
-		s++;
+		if ((const char)s[i] == (unsigned char)c)
+			return ((char *)(s + i));
+		i--;
 	}
-	if (c == '\0' || c == 1024)
-		return ((char *)s);
-	return ((char *)last);
+	return (NULL);
 }
