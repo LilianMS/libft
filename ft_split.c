@@ -6,7 +6,7 @@
 /*   By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:03:11 by lilmende          #+#    #+#             */
-/*   Updated: 2023/11/06 10:27:47 by lilmende         ###   ########.fr       */
+/*   Updated: 2023/11/06 17:04:06 by lilmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,13 @@ size_t	ft_sbstr_count(const char *s, char c)
 	return (num_substrings);
 }
 
+void	free_result(char **result, size_t count)
+{
+	while (count > 0)
+		free(result[--count]);
+	free(result);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	size_t	num_substrings;
@@ -60,11 +67,14 @@ char	**ft_split(char const *s, char c)
 			s++;
 		result[i] = ft_substr(s, 0, ft_strlenc(s, c));
 		if (!result[i])
+		{
+			free_result(result, i);
 			return (NULL);
+		}
 		s += ft_strlenc(s, c);
 		i++;
 		num_substrings--;
 	}
-	result[i] = NULL;
+	result[i] = '\0';
 	return (result);
 }

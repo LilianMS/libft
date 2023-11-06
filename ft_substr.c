@@ -6,7 +6,7 @@
 /*   By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/03 00:08:24 by lilmende          #+#    #+#             */
-/*   Updated: 2023/11/03 02:39:45 by lilmende         ###   ########.fr       */
+/*   Updated: 2023/11/06 16:48:41 by lilmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (start >= ft_strlen(s) || len == 0)
 	{
 		dst = malloc(1);
+		if (dst == NULL)
+			return (NULL);
 		dst[0] = '\0';
 		return (dst);
 	}
