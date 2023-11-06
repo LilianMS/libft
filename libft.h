@@ -6,7 +6,7 @@
 /*   By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/25 15:34:19 by lilmende          #+#    #+#             */
-/*   Updated: 2023/11/04 15:40:32 by lilmende         ###   ########.fr       */
+/*   Updated: 2023/11/06 10:21:10 by lilmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,8 @@ int		ft_atoi(const char *nptr);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_itoa(int n);
 char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strtrim(char const *s1, char const *set);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
+char	**ft_split(char const *s, char c);
 
 #endif
