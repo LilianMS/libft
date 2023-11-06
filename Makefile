@@ -6,7 +6,7 @@
 #    By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 15:34:39 by lilmende          #+#    #+#              #
-#    Updated: 2023/11/06 13:39:18 by lilmende         ###   ########.fr        #
+#    Updated: 2023/11/06 15:20:45 by lilmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,9 @@ FILES_B = ft_lstnew \
 		ft_lstadd_back \
 		ft_lstsize \
 		ft_lstlast \
+		ft_lstdelone \
+		ft_lstclear \
+		ft_lstiter \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
