@@ -6,7 +6,7 @@
 #    By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 15:34:39 by lilmende          #+#    #+#              #
-#    Updated: 2023/11/06 11:01:38 by lilmende         ###   ########.fr        #
+#    Updated: 2023/11/06 12:56:26 by lilmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,14 +51,16 @@ FILES = ft_memset \
 		ft_striteri \
 		ft_split \
 		ft_strmapi \
+		ft_lstnew \
+		ft_lstadd_front \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-# SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
+SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
 
 OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-# OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
+OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
 .c.o: $(SRCS)
 	$(CC) $(CFLAGS) -c -o $@ $<
@@ -67,8 +69,8 @@ $(NAME): $(OBJS)
 	$(AR) $@ $^
 
 
-# bonus: $(OBJS_B)
-# 	$(AR) $(NAME) $^
+bonus: $(OBJS_B)
+	$(AR) $(NAME) $^
 
 all: $(NAME)
 
@@ -80,6 +82,4 @@ fclean: clean
 
 re: clean all
 
-.PHONY:  all clean fclean re
-
-# bonus
+.PHONY: bonus all clean fclean re
