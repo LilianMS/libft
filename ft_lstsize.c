@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/02 14:18:17 by lilmende          #+#    #+#             */
-/*   Updated: 2023/11/06 13:47:11 by lilmende         ###   ########.fr       */
+/*   Created: 2023/11/06 13:32:05 by lilmende          #+#    #+#             */
+/*   Updated: 2023/11/06 13:35:42 by lilmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_lstsize(t_list *lst)
 {
-	const char	*last;
+	int		size;
+	t_list	*temp;
 
-	last = 0;
-	while (*s != '\0')
+	size = 0;
+	temp = lst;
+	while (temp != NULL)
 	{
-		if (*s == (unsigned char)c)
-			last = s;
-		s++;
+		size++;
+		temp = temp->next;
 	}
-	if (c == '\0' || c == 1024)
-		return ((char *)s);
-	return ((char *)last);
+	return (size);
 }
