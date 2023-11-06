@@ -6,7 +6,7 @@
 #    By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 15:34:39 by lilmende          #+#    #+#              #
-#    Updated: 2023/11/06 10:21:30 by lilmende         ###   ########.fr        #
+#    Updated: 2023/11/06 11:01:38 by lilmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,6 +50,7 @@ FILES = ft_memset \
 		ft_strtrim \
 		ft_striteri \
 		ft_split \
+		ft_strmapi \
 
 SRCS_DIR = ./
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
