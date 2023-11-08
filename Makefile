@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+         #
+#    By: lilmende <lilmende@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/25 15:34:39 by lilmende          #+#    #+#              #
-#    Updated: 2023/11/06 15:37:40 by lilmende         ###   ########.fr        #
+#    Updated: 2023/11/08 18:32:23 by lilmende         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,31 +62,34 @@ FILES_B = ft_lstnew \
 		ft_lstiter \
 		ft_lstmap \
 
-SRCS_DIR = ./
+SRCS_DIR =
 SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
 SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
 
-OBJS_DIR = ./
+OBJS_DIR =
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
-
-$(NAME): $(OBJS)
-	$(AR) $@ $^
-
-
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $^
+ifdef WITH_BONUS
+	FILES += $(FILES_B)
+endif
 
 all: $(NAME)
 
+.c.o: $(SRCS)
+	$(CC) $(CFLAGS) -c -o $@ $<
+$(NAME): $(OBJS)
+	$(AR) $@ $?
+	@printf "Compiled\n"
+
+bonus:
+	@$(MAKE) WITH_BONUS=TRUE --no-print-directory
+
 clean:
-	$(RM) $(OBJS) $(OBJS_B)
+	@$(RM) $(OBJS) $(OBJS_B)
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
 
 re: clean all
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lilmende <lilmende@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: lilmende <lilmende@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:03:11 by lilmende          #+#    #+#             */
-/*   Updated: 2023/11/06 17:04:06 by lilmende         ###   ########.fr       */
+/*   Updated: 2023/11/08 17:38:36 by lilmende         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ size_t	ft_sbstr_count(const char *s, char c)
 	return (num_substrings);
 }
 
-void	free_result(char **result, size_t count)
+void	ft_free_result(char **result, size_t count)
 {
 	while (count > 0)
 		free(result[--count]);
@@ -68,7 +68,7 @@ char	**ft_split(char const *s, char c)
 		result[i] = ft_substr(s, 0, ft_strlenc(s, c));
 		if (!result[i])
 		{
-			free_result(result, i);
+			ft_free_result(result, i);
 			return (NULL);
 		}
 		s += ft_strlenc(s, c);
